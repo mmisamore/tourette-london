@@ -1,6 +1,17 @@
 html {
    background-color: #0D405C;
-   /* background-image: url("green%20textured%20background.gif"); */
+}
+
+.navbar-default .navbar-nav > li > a {
+   color: black;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+   color: white;
+}
+
+.navbar-default {
+   background-image: linear-gradient(to bottom, #FFCB04, #FFCB04); */
 }
 
 h1 {
