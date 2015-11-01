@@ -26,10 +26,10 @@
 
    <script>
    function filterByKeyword() {
-      var keyWord = $('#filterbox').val();
+      var keyWord = $('#filterbox').val().toLowerCase();
 
       $('.topic').each(function(index) {
-         if( $(this).html().contains(keyWord) ) {
+         if( $(this).html().toLowerCase().contains(keyWord) ) {
             $(this).attr('style', '');
          } else {
             $(this).attr('style', 'display: none');
