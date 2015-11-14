@@ -14,6 +14,17 @@ html {
    background-image: linear-gradient(to bottom, #FFCB04, #FFCB04); 
 }
 
+.navbar-london {
+   border-width:0;
+}
+
+.navbar-national {
+   background-image: linear-gradient(to bottom, #1F99DC, #1F99DC);
+   margin-bottom:0;
+   padding-bottom:0; 
+   border-width:0;
+}
+
 h1 {
    font-size: 3rem;
 }
