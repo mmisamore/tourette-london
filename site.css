@@ -18,9 +18,26 @@ h1 {
    font-size: 3rem;
 }
 
-section li {
+article {
    margin-top: 2rem;
    margin-bottom: 2rem;
+}
+
+section p {
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   margin-left: 2rem;
+   max-width: 60rem;
+}
+
+section ul {
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+}
+
+section li {
+   margin-top: 0;
+   margin-bottom: 0;
    width: 100%;
 }
 
