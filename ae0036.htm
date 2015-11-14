@@ -29,7 +29,10 @@
       var keyWord = $('#filterbox').val().toLowerCase();
 
       $('.topic').each(function(index) {
-         if( $(this).html().toLowerCase().contains(keyWord) ) {
+         var topic = $(this).html().toLowerCase(); 
+         var keywords = ($(this).attr('data-keywords') || "").toLowerCase();
+
+         if( topic.contains(keyWord) || keywords.contains(keyWord) ) {
             $(this).attr('style', '');
          } else {
             $(this).attr('style', 'display: none');
@@ -82,371 +85,371 @@
 
          <ul>
 
-            <li class="topic">
+            <li class="topic" data-keywords="attention deficit disorder ad-hd ad/hd">
                <a href="ae0053.htm">ADD (Attention Deficit Disorder)</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0003.htm">ADHD (Attention Deficit Hyperactivity Disorder)</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0020.htm">Aggression and rage</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0057.htm">Anxiety Disorder (AD)</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0012.htm">Associated disorders</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0053.htm">Attention Deficit Disorder (ADD)</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0003.htm">Attention Deficit Hyperactivity Disorder (ADHD)</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0021.htm">Autism</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0046.htm">Being Stuck</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0002.htm">Chorea</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0061.htm">Chronic</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0049.htm">Chronic Negativism</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0023.htm">Chronic Tic Disorder</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0019.htm">Co-morbid conditions</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0004.htm">Complex Tic</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0013.htm">Compulsions</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0038.htm">Coprolalia</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0040.htm">Copropraxia</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0052.htm">Counting</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0051.htm">Defensiveness</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0059.htm">Depression</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0035.htm">Diagnosis</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0024.htm">Diagnostic and Statistical Manual of Mental Disorders (DSM.)</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0024.htm">DSM (Diagnostic and Statistical Manual of Mental Disorders)</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0006.htm">Dystonia</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0041.htm">Echolalia</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0041.htm">Echopraxia</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0010.htm">Eye Blinking</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0055.htm">Generalized Anxiety Disorder (GAD)</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0046.htm">Getting stuck</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0054.htm">HD (Hyperactivity Disorder)</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0054.htm">Hyperactivity Disorder (HD)</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0015.htm">Impulse Control</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0042.htm">Impulsivity</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0033.htm">Inheritance of TS</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0011.htm">Involuntary</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0014.htm">Learning Disabilities</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0046.htm">Looping</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0027.htm">Medical treatment</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0004.htm">Motor Tic</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0037.htm">Movement disorders</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0062.htm">Movements</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0008.htm">Myoclonus</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0049.htm">Negativism</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0052.htm">Numbers</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0043.htm">Obsessions</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0047.htm">Obsessive Compulsive Behaviour (OCB)</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0013.htm">Obsessive Compulsive Disorder (OCD)</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0047.htm">OCB (Obsessive Compulsive Behaviour)</a>
             </li>
         
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0013.htm">OCD (Obsessive Compulsive Disorder)</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0032.htm">Origin of TS</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0041.htm">Palilalia</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0056.htm">Panic Disorder (PD)</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0022.htm">PDD (Pervasive Development Disorders)</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0050.htm">Perseveration</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0022.htm">Pervasive Development Disorders (PDD)</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0004.htm">Phonic Tic</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0011.htm">Premonitory Urge</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0026.htm">Psychological therapies</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0028.htm">Pure TS</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0020.htm">Rage and Aggression</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0048.htm">Reassurance Seeking</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0045.htm">Ritualistic Behaviours</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0045.htm">Rituals</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0048.htm">Seeking Reassurance</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0009.htm">Seizure Disorders</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0004.htm">Simple Tic</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0025.htm">Sleep Disorders</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0029.htm">Small motor skills deficit (cursive writing, tying shoe laces)</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0058.htm">Social Anxiety Disorder (SAD)</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0063.htm">Sounds</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0005.htm">Stereotypies</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0018.htm">Symptoms</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0034.htm">Syndrome</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0030.htm">Tic Disorders</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0016.htm">Tic list</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0004.htm">Tics</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0036.htm">Topic List</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0001.htm">Tourette Syndrome</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0031.htm">Tourette Syndrome Foundation of Canada (TSFC)</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0017.htm">Transient Tic Disorder</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0007.htm">Tremor</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0060.htm">Trichotillomania</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0001.htm">TS</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0028.htm">TS Only</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0064.htm">TS Plus</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0064.htm">TS+</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0031.htm">TSFC (Tourette Syndrome Foundation of Canada)</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0039.htm">Understanding Tourette Syndrome – a Handbook for Educators</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0004.htm">Vocal Tic</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0063.htm">Vocalizations</a>
             </li>
 
-            <li class="topic">
+            <li class="topic" data-keywords="">
                <a href="ae0001.htm">What is Tourette Syndrome</a>
             </li>
 
