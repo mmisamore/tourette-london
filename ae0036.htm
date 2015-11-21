@@ -24,32 +24,61 @@
    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
    <script>
-   function filterByKeyword() {
-      var keyword = $('#filterbox').val().toLowerCase();
-
-      $('.topic').each(function(index) {
-         var topic = $(this).html().toLowerCase(); 
-         var keywords = ($(this).attr('data-keywords') || "").toLowerCase().split(',');
-
-         if( topic.contains(keyword) || $.inArray(keyword, keywords) > -1 ) {
-            $(this).attr('style', '');
-         } else {
-            $(this).attr('style', 'display: none');
-         }
-      });
-
-      matches = $('.topic').not(function(index) {
-         return $(this).attr('style').contains('display: none'); 
-      });
-
-      if( $(matches).size() === 0 ) {
-         console.log('detected no matches');
-         $('#nomatch').attr('style', '');
-      } else {
-         $('#nomatch').attr('style', 'display: none');
+      // Get keyword from search box 
+      function getKeyword() {
+         return $('#filterbox').val().toLowerCase();
       }
 
-   }
+      // Get all matching topics
+      function getMatches() {
+         return $('.topic').not(function(index) {
+            return $(this).attr('style').contains('display: none'); 
+         });
+      }
+
+      // Filter topics by a keyword
+      function filterByKeyword(e) {
+         // Launch search logic if we got the Enter key
+         if(e.keyCode === 13) { go(); return; }
+
+         // Reset any error message on Go button
+         $('#nolaunch').attr('style', 'display: none');
+
+         // Set topic visibility
+         var keyword = getKeyword();
+         $('.topic').each(function(index) {
+            var topic = $(this).html().toLowerCase(); 
+            var keywords = ($(this).attr('data-keywords') || "").toLowerCase().split(',');
+
+            if( topic.contains(keyword) || $.inArray(keyword, keywords) > -1 ) {
+               $(this).attr('style', '');
+            } else {
+               $(this).attr('style', 'display: none');
+            }
+         });
+
+         // Display warning element when no topics found 
+         var matches = getMatches();
+         if( $(matches).size() === 0 ) {
+            $('#nomatch').attr('style', '');
+         } else {
+            $('#nomatch').attr('style', 'display: none');
+         }
+      }
+
+      // Search button action
+      function go() {
+         var matches = getMatches();
+
+         // Display warning or perform redirect
+         if( $(matches).size() != 1 ) {
+            $('#nolaunch').attr('style', '');
+         } else {
+            $('#nolaunch').attr('style', 'display: none');
+            var anchor = $(matches[0]).find('a')[0];
+            window.location.href=$(anchor).attr('href');
+         }
+      }
    </script>
 
 </head>
@@ -123,9 +152,16 @@
       <section>
          <h1>Related Topics</h1>
 
-         <div>
-            <label>Search: </label>
-            <input id="filterbox" type="text" placeholder="Enter a keyword" onkeyup="filterByKeyword()">
+         <div class="form-inline">
+            <div class="form-group">
+               <label for="filterbox">Search: </label>
+               <input id="filterbox" class="form-control" type="text" 
+                  placeholder="Enter a keyword" onkeyup="filterByKeyword(event)">
+            </div>
+
+            <div class="form-group">
+               <button id="search" class="form-control" onclick="go()">Go</button>
+            </div>
          </div> 
          
          <ul>
@@ -501,6 +537,7 @@
          </ul>
 
          <div style="display:none" id="nomatch"><i>Match not found, single word search works best</i></div>
+         <div style="display:none" id="nolaunch"><i>Sorry, there has to be a single match to use the Go button</i></div>
 
       </section>
 
