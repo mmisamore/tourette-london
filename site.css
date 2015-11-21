@@ -12,7 +12,7 @@ html {
    padding-bottom:0; 
    border-width:0;
    width:200vw;
-   margin-left:-50vw;
+   margin-left:-60vw;
    min-height:1rem;
 }
 
@@ -39,7 +39,7 @@ html {
    background-image: linear-gradient(to bottom, #FFCB04, #FFCB04); 
    border-width:0;
    width:200vw;
-   margin-left:-50vw;
+   margin-left:-60vw;
 }
 
 .container.navbar-london > ul {
