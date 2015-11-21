@@ -12,7 +12,6 @@
 
    <!-- bootstrap support -->
    <link href="bootstrap.min.css" rel="stylesheet">
-   <link href="bootstrap-theme.min.css" rel="stylesheet">
    <link href="site.css" rel="stylesheet">
    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
 
@@ -38,6 +37,18 @@
             $(this).attr('style', 'display: none');
          }
       });
+
+      matches = $('.topic').not(function(index) {
+         return $(this).attr('style').contains('display: none'); 
+      });
+
+      if( $(matches).size() === 0 ) {
+         console.log('detected no matches');
+         $('#nomatch').attr('style', '');
+      } else {
+         $('#nomatch').attr('style', 'display: none');
+      }
+
    }
    </script>
 
@@ -45,49 +56,60 @@
 
 <body class="default-margin">
 
-   <header>
+   <header id="top">
       <a href="http://www.tourette-london.ca/">
          <img alt="Tourette Syndrome Foundation of Canada, London Chapter Logo" src="chapter-london.jpg">
       </a>
+      <img alt="Background of people smiling" src="top-people.jpg">
    </header>
 
    <nav class="navbar navbar-default navbar-national">
-      <div class="container">
-         <ul class="nav navbar-nav">
+      <div class="container navbar-national">
+         <ul class="nav navbar-nav navbar-national">
             <li>
-               <a title="Go to Tourette Canada national site" href="https://www.tourette.ca/">Tourette Canada</a>
+               <a title="Go to Tourette Canada's national site" href="https://www.tourette.ca/">Tourette Canada</a>
             </li>
 
             <li>
-               <a title="Helpful links" href="Links.htm">Links</a>
+               <a title="Tourette Canada approved links" href="Links.htm">Related Links</a>
             </li>
 
             <li>
-               <a title="Funding information" href="TBD">Funding</a> 
+               <a title="About London Chapter's funding" href="TBD">Funding</a> 
             </li>
 
             <li>
-               <a title="Contact the London Chapter" 
-                  href="mailto:rayrobertson@hotmail.com?subject=London%20Chapter%20Web%20Site%20inquiry">Contact us</a>
+               <a title="London Chapter's activities" href="TBD">Our Chapter</a> 
+            </li>
+
+            <li>
+               <a title="How to contact us" 
+                  href="mailto:rayrobertson@hotmail.com?subject=London%20Chapter%20Web%20Site%20inquiry">Contact Us</a>
             </li>
          </ul>
       </div>
    </nav>
 
    <nav class="navbar navbar-default navbar-london">
-      <div class="container">
-         <ul class="nav navbar-nav">
+      <div class="container navbar-london">
+         <ul class="nav navbar-nav navbar-london">
             <li>
-               <a title="Go to London Chapter home page" href="http://www.tourette-london.ca/">Home Page</a>
+               <a title="Go to London Chapter's home page" href="http://www.tourette-london.ca/">Home Page</a>
             </li>
 
             <li>
-               <a title="Go to Topics List" href="ae0036.htm">Topic List</a>
+               <a title="About Tourette Syndrome" href="ae0001.htm">Tourette Syndrome</a>
             </li>
 
-            <li style="text-align:center">
-               <a title="Go back one page" href="javascript:window.history.back()">Go Back<br/>&larr;</a>
+            <li>
+               <a title="Other topics of interest" href="ae0036.htm">Related Topics</a>
             </li>
+
+            <li>
+               <a title="Return to previous page"
+                  href="javascript:window.history.back()">&larr; Back</a>
+            </li>
+
          </ul>
       </div>
    </nav>
@@ -105,7 +127,7 @@
             <label>Filter the list below by typing a keyword:</label>
             <input id="filterbox" type="text" onkeyup="filterByKeyword()">
          </div> 
-
+         
          <ul>
 
             <li class="topic" data-keywords="attention deficit disorder ad-hd ad/hd">
@@ -478,27 +500,39 @@
 
          </ul>
 
+         <div style="display:none" id="nomatch"><i>Match not found, single word search works best</i></div>
+
       </section>
 
    </article>
-
+   
    <nav class="navbar navbar-default navbar-london">
-      <div class="container">
-         <ul class="nav navbar-nav">
+      <div class="container navbar-london">
+         <ul class="nav navbar-nav navbar-london">
             <li>
-               <a title="Go to London Chapter home page" href="http://www.tourette-london.ca/">Home Page</a>
+               <a title="Go to London Chapter's home page" href="http://www.tourette-london.ca/">Home Page</a>
             </li>
 
             <li>
-               <a title="Go to Topics List" href="ae0036.htm">Topic List</a>
+               <a title="About Tourette Syndrome" href="ae0001.htm">Tourette Syndrome</a>
             </li>
 
-            <li style="text-align:center">
-               <a title="Go back one page" href="javascript:window.history.back()">Go Back<br/>&larr;</a>
+            <li>
+               <a title="Other topics of interest" href="ae0036.htm">Related Topics</a>
+            </li>
+
+            <li>
+               <a title="Return to previous page"
+                  href="javascript:window.history.back()">&larr; Back</a>
+            </li>
+
+            <li>
+               <a title="Go to the top of this page" href="#top">Top</a>
             </li>
          </ul>
       </div>
    </nav>
+
 
 </body>
 </html>

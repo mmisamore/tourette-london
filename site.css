@@ -1,28 +1,60 @@
 html {
-   background-color: #0D405C;
+   background-color: #FFFFFF;
+   /* background-color: #0D405C; */
 }
 
-.navbar-default .navbar-nav > li > a {
-   color: black;
-}
-
-.navbar-default .navbar-nav > li > a:hover {
-   color: white;
-}
-
-.navbar-default {
-   background-image: linear-gradient(to bottom, #FFCB04, #FFCB04); 
-}
-
-.navbar-london {
-   border-width:0;
-}
-
-.navbar-national {
-   background-image: linear-gradient(to bottom, #1F99DC, #1F99DC);
+/* Navbar for National site links */
+.navbar.navbar-default.navbar-national {
+   background-image: linear-gradient(to bottom, #1F99DC, #1F99DC); 
+   margin-top:0;
+   padding-top:0;
    margin-bottom:0;
    padding-bottom:0; 
    border-width:0;
+   width:200vw;
+   margin-left:-50vw;
+   min-height:1rem;
+}
+
+.container.navbar-national > ul {
+   width:70vw; 
+   display:flex;
+   justify-content:space-around;
+}
+
+.nav.navbar-nav.navbar-national > li {
+   line-height:1rem;
+}
+
+.nav.navbar-nav.navbar-national > li > a {
+   color:white;
+}
+
+.nav.navbar-nav.navbar-national > li > a:hover {
+   color: #E0E0E0;
+}
+
+/* Navbar for London site links */
+.navbar.navbar-default.navbar-london {
+   background-image: linear-gradient(to bottom, #FFCB04, #FFCB04); 
+   border-width:0;
+   width:200vw;
+   margin-left:-50vw;
+}
+
+.container.navbar-london > ul {
+   width:70vw; 
+   display:flex;
+   justify-content:space-around;
+}
+
+.nav.navbar-nav.navbar-london > li > a {
+   color:#0D405C;
+   line-height:1rem;
+}
+
+.nav.navbar-nav.navbar-london > li > a:hover {
+   color:white;
 }
 
 h1 {
@@ -55,10 +87,9 @@ section li {
 body {
    margin-left: 10vw;
    margin-right: 10vw;
-   padding-top: 5vh;
    padding-bottom: 5vh;
    padding-left: 5vw;
    padding-right: 5vw;
+   overflow-x: hidden;
 }
-
 
