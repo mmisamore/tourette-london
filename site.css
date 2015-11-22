@@ -3,6 +3,10 @@ html {
    /* background-color: #0D405C; */
 }
 
+#top > a:hover {
+   text-decoration:none;
+}
+
 /* Navbar for National site links */
 .navbar.navbar-default.navbar-national {
    background-image: linear-gradient(to bottom, #1F99DC, #1F99DC); 
