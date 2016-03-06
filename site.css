@@ -28,6 +28,7 @@ html {
 
 .nav.navbar-nav.navbar-national > li {
    line-height:1rem;
+   font-size:1.5rem;
 }
 
 .nav.navbar-nav.navbar-national > li > a {
@@ -55,6 +56,7 @@ html {
 .nav.navbar-nav.navbar-london > li > a {
    color:#0D405C;
    line-height:1rem;
+   text-decoration:underline;
 }
 
 .nav.navbar-nav.navbar-london > li > a:hover {
