@@ -88,6 +88,11 @@ section li {
    width: 100%;
 }
 
+header {
+   margin-bottom: 1rem;
+   margin-top: 1rem;
+}
+
 body {
    margin-left: 10vw;
    margin-right: 10vw;
@@ -97,3 +102,12 @@ body {
    overflow-x: hidden;
 }
 
+.london-chapter {
+   vertical-align: bottom;
+   font-size: 1.25rem;
+   color: #2FBDF2;
+}
+
+.pad-bottom-1px {
+   padding-bottom: 1px;
+}
