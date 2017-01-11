@@ -34,6 +34,9 @@ tidied=$(echo $tidied | sed -E 's/<p><br><\/p>//g')
 # Attempt to detect header and encode it properly
 tidied=$(echo $tidied | sed -E 's/<p><font [^>]+>([^<]+)<\/font><\/p>/<h1>\1<\/h1>/g' | sed 's/<\/font>//g')
 
+# Ensure anchors are not juxtaposed with words
+tidied=$(echo $tidied | sed -E 's/<\/a>([a-zA-Z])/<\/a> \1/g' | sed 's/<\/a> s /<\/a>s /g')
+
 # Splice article content together with header and footer
 articleHead=$(cat articleHead.html)
 articleFoot=$(cat articleFoot.html)
