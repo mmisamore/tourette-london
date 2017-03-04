@@ -21,6 +21,7 @@ tidied=$(cat "$outputFile" | sed 's/\(.*\)/      \1/g')
 
 # Strip out all of the font modifiers 
 tidied=$(echo $tidied | sed -E 's/<font color="[^"]+">//g')
+tidied=$(echo $tidied | sed -E 's/<font color= "[^"]+">//g')
 
 # Strip out all of the paragraph classes
 tidied=$(echo $tidied | sed -E 's/<p [^>]+>/<p>/g')
@@ -36,6 +37,9 @@ tidied=$(echo $tidied | sed -E 's/<p><font [^>]+>([^<]+)<\/font><\/p>/<h1>\1<\/h
 
 # Ensure anchors are not juxtaposed with words
 tidied=$(echo $tidied | sed -E 's/<\/a>([a-zA-Z])/<\/a> \1/g' | sed 's/<\/a> s /<\/a>s /g')
+
+# Remove "chronic</a></p> <p>" anomalies
+tidied=$(echo $tidied | sed -E 's/chronic<\/a><\/p> <p>/chronic<\/a> /g')
 
 # Splice article content together with header and footer
 articleHead=$(cat articleHead.html)
