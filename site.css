@@ -75,6 +75,11 @@ article {
    margin-bottom: 2rem;
 }
 
+section {
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
 section p {
    margin-top: 1rem;
    margin-bottom: 1rem;
