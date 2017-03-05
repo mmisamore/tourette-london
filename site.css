@@ -34,6 +34,8 @@ html {
 .nav.navbar-nav.navbar-national > a {
    color:white;
    text-decoration:underline;
+   margin-left: 1vw;
+   margin-right: 1vw;
 }
 
 .nav.navbar-nav.navbar-national > a:hover {
@@ -56,6 +58,8 @@ html {
    color:#0D405C;
    line-height:1rem;
    text-decoration:underline;
+   margin-left: 1vw;
+   margin-right: 1vw;
 }
 
 .nav.navbar-nav.navbar-london > a:hover {
@@ -94,8 +98,10 @@ section li {
 }
 
 header {
-   margin-bottom: 1rem;
-   margin-top: 1rem;
+   margin-left: 10vw;
+   margin-right: 10vw;
+   padding-left: 5vw;
+   padding-right: 5vw;
 }
 
 body {
@@ -130,11 +136,3 @@ body {
   margin-left: 5vw;
   margin-right: 5vw;
 }
-
-/*
-.address {
-   font-style: italic;
-   margin-top: 0rem;
-   margin-left: 2rem;
-}
-*/
