@@ -117,3 +117,18 @@ body {
 .pad-bottom-1px {
    padding-bottom: 1px;
 }
+
+.centered-header {
+  text-align: center;
+}
+
+.right-header {
+  text-align: right;
+}
+
+.address {
+   font-style: italic;
+   margin-top: 0rem;
+   margin-left: 2rem;
+}
+
