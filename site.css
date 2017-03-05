@@ -139,3 +139,44 @@ body {
   margin-left: 5vw;
   margin-right: 5vw;
 }
+
+.book {
+   margin-left: 2rem;
+   margin-bottom: 1rem;
+}
+
+.book-title:before {
+  content: 'Title: ';
+  font-weight: bold; 
+}
+
+.book-authors:before {
+  content: 'Authors: ';
+  font-weight: bold; 
+}
+
+.book-pages:before {
+  content: 'Pages: ';
+  font-weight: bold;
+}
+
+.book-date:before {
+  content: 'Date: ';
+  font-weight: bold; 
+}
+
+.book-format:before {
+  content: 'Format: ';
+  font-weight: bold; 
+}
+
+.book-publisher:before {
+  content: 'Publisher: ';
+  font-weight: bold; 
+}
+
+.book-available:before {
+  content: 'Availability: ';
+  font-weight: bold;
+}
+
