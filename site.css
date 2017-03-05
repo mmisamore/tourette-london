@@ -121,13 +121,20 @@ body {
   text-align: center;
 }
 
-.right-header {
-  text-align: right;
+.mainpage-layout {
+  display: flex;
+  justify-content: center;   
 }
 
+.mainpage-layout > div {
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+/*
 .address {
    font-style: italic;
    margin-top: 0rem;
    margin-left: 2rem;
 }
-
+*/
