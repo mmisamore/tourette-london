@@ -107,10 +107,8 @@ header {
 body {
    margin-left: 10vw;
    margin-right: 10vw;
-   padding-bottom: 5vh;
    padding-left: 5vw;
    padding-right: 5vw;
-   overflow-x: hidden;
 }
 
 .london-chapter {
