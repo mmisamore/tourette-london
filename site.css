@@ -90,6 +90,10 @@ section li {
    width: 100%;
 }
 
+.link-section {
+  margin-bottom: 1rem;
+}
+
 header {
    margin-bottom: 1rem;
    margin-top: 1rem;
