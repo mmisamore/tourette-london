@@ -8,9 +8,10 @@
    <meta name="keywords" content="Tourette,Syndrome,London,Ontario,Canada">
    <meta name="author" content="Ray Robertson">
 
+   <title>Tourette Syndrome</title>
+
    <!-- bootstrap support -->
    <link href="bootstrap.min.css" rel="stylesheet">
-   <link href="bootstrap-theme.min.css" rel="stylesheet">
    <link href="site.css" rel="stylesheet">
    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
 
@@ -18,6 +19,68 @@
    <script="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
    <script="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
    <![endif]-->
+
+   <!-- jquery support -->
+   <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+   <script>
+      // Get keyword from search box 
+      function getKeyword() {
+         return $('#filterbox').val().toLowerCase();
+      }
+
+      // Get all matching topics
+      function getMatches() {
+         return $('.topic').not(function(index) {
+            return $(this).attr('style').includes('display: none'); 
+         });
+      }
+
+      // Filter topics by a keyword
+      function filterByKeyword(e) {
+         // Launch search logic if we got the Enter key
+         if(e.keyCode === 13) { go(); return; }
+
+         // Reset any error message on Go button
+         $('#nolaunch').attr('style', 'display: none');
+
+         // Set topic visibility
+         var keyword = getKeyword();
+         $('.topic').each(function(index) {
+            var topic = $(this).html().toLowerCase(); 
+            var keywords = ($(this).attr('data-keywords') || "").toLowerCase().split(',');
+
+            if( topic.includes(keyword) || $.inArray(keyword, keywords) > -1 ) {
+               $(this).attr('style', '');
+            } else {
+               $(this).attr('style', 'display: none');
+            }
+         });
+
+         // Display warning element when no topics found 
+         var matches = getMatches();
+         if( $(matches).size() === 0 ) {
+            $('#nomatch').attr('style', '');
+         } else {
+            $('#nomatch').attr('style', 'display: none');
+         }
+      }
+
+      // Search button action
+      function go() {
+         var matches = getMatches();
+
+         // Display warning or perform redirect
+         if( $(matches).size() != 1 ) {
+            $('#nolaunch').attr('style', '');
+         } else {
+            $('#nolaunch').attr('style', 'display: none');
+            var anchor = $(matches[0]).find('a')[0];
+            window.location.href=$(anchor).attr('href');
+         }
+      }
+   </script>
+
 </head>
 
 <body class="default-margin">
@@ -81,11 +144,403 @@
    </nav>
 
    <article>
+
       <section>
- 
-<p><a href="http://tourette-london.ca/ae0001.htm"><font size="4" style="font-size: 14pt">What is Tourette Syndrome?</a></p> <p><font size="4" style="font-size: 14pt"><u><b>Other Topics</b></u></p> <table width="503" cellpadding="8" cellspacing="0"> <col width="487"> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0053.htm">ADD (Attention Deficit Disorder)</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0003.htm">ADHD (Attention Deficit Hyperactivity Disorder)</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0020.htm">Aggression and rage</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0057.htm">Anxiety Disorder (AD)</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0012.htm">Associated disorders</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0053.htm">Attention Deficit Disorder (ADD)</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0003.htm">Attention Deficit Hyperactivity Disorder (ADHD)</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0021.htm">Autism</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0046.htm">Being Stuck</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0002.htm">Chorea</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0061.htm">Chronic</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0049.htm">Chronic Negativism</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0023.htm">Chronic Tic Disorder</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0019.htm">Co-morbid condition</a> s</p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0004.htm">Complex Tic</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0013.htm">Compulsions</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0038.htm">Coprolalia</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0040.htm">Copropraxia</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0052.htm">Counting</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0051.htm">Defensiveness</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0059.htm">Depression</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0035.htm">Diagnosis</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0024.htm">Diagnostic and Statistical Manual of Mental Disorders (DSM.)</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0024.htm">DSM (Diagnostic and Statistical Manual of Mental Disorders)</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0006.htm">Dystonia</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0041.htm">Echolalia</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0041.htm">Echopraxia</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0010.htm">Eye Blinking</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0055.htm">Generalized Anxiety Disorder (GAD)</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0046.htm">Getting stuck</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0054.htm">HD (Hyperactivity Disorder)</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0054.htm">Hyperactivity Disorder (HD)</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0015.htm">Impulse Control</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0042.htm">Impulsivity</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0033.htm">Inheritance of TS</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0011.htm">Involuntary</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0014.htm">Learning Disabilities</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0046.htm">Looping</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0027.htm">Medical treatment</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0004.htm">Motor Tic</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0037.htm">Movement disorders</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0062.htm">Movements</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0008.htm">Myoclonus</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0049.htm">Negativism</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0052.htm">Numbers</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0043.htm">Obsessions</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0047.htm">Obsessive Compulsive Behaviour (OCB)</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0013.htm">Obsessive Compulsive Disorder (OCD)</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0047.htm">OCB (Obsessive Compulsive Behaviour)</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0013.htm">OCD (Obsessive Compulsive Disorder)</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0032.htm">Origin of TS</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0041.htm">Palilalia</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0056.htm">Panic Disorder (PD)</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0022.htm">PDD (Pervasive Development Disorders)</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0050.htm">Perseveration</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0022.htm">Pervasive Development Disorders (PDD)</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0004.htm">Phonic Tic</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0011.htm">Premonitory Urge</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0026.htm">Psychological therapies</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0028.htm">Pure TS</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0020.htm">Rage and Aggression</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0048.htm">Reassurance Seeking</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0045.htm">Ritualistic Behaviours</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0045.htm">Rituals</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0048.htm">Seeking Reassurance</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0009.htm">Seizure Disorders</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0004.htm">Simple Tic</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0025.htm">Sleep Disorders</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0029.htm">Small motor skills deficit (cursive writing, tying shoe laces</a>)</p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0058.htm">Social Anxiety Disorder (SAD)</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0063.htm">Sounds</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0005.htm">Stereotypies</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0018.htm">Symptoms</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0034.htm">Syndrome</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0030.htm">Tic Disorders</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0016.htm">Tic list</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0004.htm">Tics</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0036.htm">Topic List</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="http://tourette-london.ca/ae0001.htm">Tourette Syndrome</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0031.htm">Tourette Syndrome Foundation of Canada (TSFC)</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0017.htm">Transient Tic Disorder</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0007.htm">Tremor</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0060.htm">Trichotillomania</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0001.htm">TS</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0028.htm">TS Only</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0064.htm">TS Plus</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0064.htm">TS+</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0031.htm">TSFC (Tourette Syndrome Foundation of Canada)</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0039.htm">Understanding Tourette Syndrome – a Handbook for Educators</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0004.htm">Vocal Tic</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0063.htm">Vocalizations</a></p> </td> </tr> <tr> <td width="487" valign="top" style="border: none; padding: 0in"> <p><a href="ae0001.htm">What is Tourette Syndrome</a></p> </td> </tr> </table>
- 
+         <h1><a href="ae0001.htm">What is Tourette Syndrome?</a></h1>
       </section>
+
+      <section>
+         <h1>Related Topics</h1>
+
+         <div class="form-inline">
+            <div class="form-group">
+               <label for="filterbox">Search: </label>
+               <input id="filterbox" class="form-control" type="text" 
+                  placeholder="Enter a keyword" onkeyup="filterByKeyword(event)">
+            </div>
+
+            <div class="form-group">
+               <button id="search" class="form-control" onclick="go()">Go</button>
+            </div>
+         </div> 
+         
+         <ul>
+
+            <li class="topic" data-keywords="attention,deficit,disorder,ad-hd,ad/hd,ad hd">
+               <a href="ae0053.htm">ADD (Attention Deficit Disorder)</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0003.htm">ADHD (Attention Deficit Hyperactivity Disorder)</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0020.htm">Aggression and rage</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0057.htm">Anxiety Disorder (AD)</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0012.htm">Associated disorders</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0053.htm">Attention Deficit Disorder (ADD)</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0003.htm">Attention Deficit Hyperactivity Disorder (ADHD)</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0021.htm">Autism</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0046.htm">Being Stuck</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0002.htm">Chorea</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0061.htm">Chronic</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0049.htm">Chronic Negativism</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0023.htm">Chronic Tic Disorder</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0019.htm">Co-morbid conditions</a>
+            </li>
+        
+            <li class="topic" data-keywords="tick,ticks,tics">
+               <a href="ae0004.htm">Complex Tic</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0013.htm">Compulsions</a>
+            </li>
+        
+            <li class="topic" data-keywords="swear,swears,swearing">
+               <a href="ae0038.htm">Coprolalia</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0040.htm">Copropraxia</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0052.htm">Counting</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0051.htm">Defensiveness</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0059.htm">Depression</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0035.htm">Diagnosis</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0024.htm">Diagnostic and Statistical Manual of Mental Disorders (DSM.)</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0024.htm">DSM (Diagnostic and Statistical Manual of Mental Disorders)</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0006.htm">Dystonia</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0041.htm">Echolalia</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0041.htm">Echopraxia</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0010.htm">Eye Blinking</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0055.htm">Generalized Anxiety Disorder (GAD)</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0046.htm">Getting stuck</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0054.htm">HD (Hyperactivity Disorder)</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0054.htm">Hyperactivity Disorder (HD)</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0015.htm">Impulse Control</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0042.htm">Impulsivity</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0033.htm">Inheritance of TS</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0011.htm">Involuntary</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0014.htm">Learning Disabilities</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0046.htm">Looping</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0027.htm">Medical treatment</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0004.htm">Motor Tic</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0037.htm">Movement disorders</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0062.htm">Movements</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0008.htm">Myoclonus</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0049.htm">Negativism</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0052.htm">Numbers</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0043.htm">Obsessions</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0047.htm">Obsessive Compulsive Behaviour (OCB)</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0013.htm">Obsessive Compulsive Disorder (OCD)</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0047.htm">OCB (Obsessive Compulsive Behaviour)</a>
+            </li>
+        
+            <li class="topic" data-keywords="">
+               <a href="ae0013.htm">OCD (Obsessive Compulsive Disorder)</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0032.htm">Origin of TS</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0041.htm">Palilalia</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0056.htm">Panic Disorder (PD)</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0022.htm">PDD (Pervasive Development Disorders)</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0050.htm">Perseveration</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0022.htm">Pervasive Development Disorders (PDD)</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0004.htm">Phonic Tic</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0011.htm">Premonitory Urge</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0026.htm">Psychological therapies</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0028.htm">Pure TS</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0020.htm">Rage and Aggression</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0048.htm">Reassurance Seeking</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0045.htm">Ritualistic Behaviours</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0045.htm">Rituals</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0048.htm">Seeking Reassurance</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0009.htm">Seizure Disorders</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0004.htm">Simple Tic</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0025.htm">Sleep Disorders</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0029.htm">Small motor skills deficit (cursive writing, tying shoe laces)</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0058.htm">Social Anxiety Disorder (SAD)</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0063.htm">Sounds</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0005.htm">Stereotypies</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0018.htm">Symptoms</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0034.htm">Syndrome</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0030.htm">Tic Disorders</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0016.htm">Tic list</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0004.htm">Tics</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0036.htm">Topic List</a>
+            </li>
+
+            <li class="topic" data-keywords="gilles,tourette's,tourettes,ts,t s">
+               <a href="ae0001.htm">Tourette Syndrome</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0031.htm">Tourette Syndrome Foundation of Canada (TSFC)</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0017.htm">Transient Tic Disorder</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0007.htm">Tremor</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0060.htm">Trichotillomania</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0001.htm">TS</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0028.htm">TS Only</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0064.htm">TS Plus</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0064.htm">TS+</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0031.htm">TSFC (Tourette Syndrome Foundation of Canada)</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0039.htm">Understanding Tourette Syndrome – a Handbook for Educators</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0004.htm">Vocal Tic</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0063.htm">Vocalizations</a>
+            </li>
+
+            <li class="topic" data-keywords="">
+               <a href="ae0001.htm">What is Tourette Syndrome</a>
+            </li>
+
+         </ul>
+
+         <div style="display:none" id="nomatch"><i>Match not found, single word search works best</i></div>
+         <div style="display:none" id="nolaunch"><i>Sorry, there has to be a single match to use the Go button</i></div>
+
+      </section>
+
    </article>
    
    <nav class="navbar navbar-default navbar-london">
@@ -114,6 +569,7 @@
          </ul>
       </div>
    </nav>
+
 
 </body>
 </html>
