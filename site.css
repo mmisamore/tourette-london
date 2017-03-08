@@ -180,3 +180,8 @@ body {
   font-weight: bold;
 }
 
+.book-review:before {
+  content: 'Review: ';
+  font-weight: bold;
+}
+
